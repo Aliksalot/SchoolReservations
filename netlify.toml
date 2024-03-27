@@ -1,0 +1,38 @@
+# Define build settings
+[build]
+  # Set the base directory for the build
+  base = "dist"
+
+  # Set the command to build your project
+  command = "npm run build"
+
+  # Set the publish directory for the build output
+  publish = "dist"
+
+# Configure asset optimization
+[build.processing]
+  # Enable CSS minification
+  css = "minify"
+
+  # Enable JavaScript minification
+  js = "minify"
+
+# Redirects and rewrites for client-side routing
+[[redirects]]
+  # Redirect all requests to the index.html file
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Define headers configuration
+[[headers]]
+  # Cache policy for all files
+  for = "/*"
+    [headers.values]
+      Cache-Control = "public, max-age=0, must-revalidate"
+
+# Functions directory configuration (if applicable)
+[functions]
+  # Set the directory where Netlify should look for serverless functions
+  directory = "functions"
+

@@ -1,14 +1,14 @@
 import './App.css'
+import {Route, Routes, Navigate } from 'react-router-dom'
+import Comp from './Comp'
 
 function App() {
   return (
     <>
-      TEST
-      TEST
-      TEST
-      TEST
-      TEST
-      TEST
+      <Routes>
+        <Route path = '*' element = {<Navigate to = '/asd' replace={true}/>}/>
+        <Route path = '/asd' element = {<Comp />} />
+      </Routes>
     </>
   )
 }

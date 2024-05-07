@@ -1,0 +1,23 @@
+.form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.peopleCountP{
+  font-size: 1.1rem;
+}
+.peopleCountP span{
+  font-size: 1.2rem;
+  color: var(--color2);
+}
+.label{
+  width: 80%;
+  text-align: center;
+}
+.select{
+}
+.select option{
+}
+.submitButton{
+}
+

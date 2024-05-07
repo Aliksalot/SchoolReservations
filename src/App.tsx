@@ -1,14 +1,19 @@
 import './App.css'
+import './index.css'
 import {Route, Routes, Navigate } from 'react-router-dom'
-import Comp from './Comp'
 
+import Nav from './components/shared/Nav.tsx'
+import Home from './views/Home/Home.tsx'
 function App() {
   return (
     <>
-      <Routes>
-        <Route path = '*' element = {<Navigate to = '/asd' replace={true}/>}/>
-        <Route path = '/asd' element = {<Comp />} />
-      </Routes>
+      <Nav />
+      <main>
+        <Routes>
+          <Route path = '/reserve/*' element = {<Home />} />
+          <Route path = '*' element= {<Navigate to='/reserve' replace />} />
+        </Routes>
+      </main>
     </>
   )
 }

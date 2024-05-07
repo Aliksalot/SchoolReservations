@@ -1,0 +1,31 @@
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.peopleCountLabel{
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.peopleCountInput{
+  width: min-content;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: thin solid var(--color2);
+  outline: none;
+  background-color: transparent;
+}
+.submitPeopleCountButton{
+  display: none;
+  width: min-content;
+  text-wrap: nowrap;
+  font-size: 1.1rem;
+  padding: .1rem 1rem;
+  margin: .3rem auto;
+}
+.show{
+  display: block;
+}
+

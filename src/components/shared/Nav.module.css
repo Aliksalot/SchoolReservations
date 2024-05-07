@@ -1,0 +1,38 @@
+.header{
+  background-color: var(--color2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.contentAligner{
+  width: 100vw;
+}
+.nav{
+  width: var(--content-width);
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: min-content;
+}
+.siteTitle{
+  font-size: 2rem;
+  color: var(--color1);
+  text-wrap: nowrap;
+}
+.logo{
+  margin-left: 1rem;
+  width: 4rem;
+  height: 4rem;
+}

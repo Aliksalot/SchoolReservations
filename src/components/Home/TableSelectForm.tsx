@@ -1,4 +1,4 @@
-import {useParams, useSearchParams} from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import {ChangeEvent, FormEvent, useEffect, useRef, useState} from "react";
 import style from './TableSelectForm.module.css';
 import { Table } from "../../types/models";
@@ -6,7 +6,7 @@ import {useHome} from "../../views/Home/Home";
 
 export default function  TableSelectForm() {
 
-  const { showLoading, setShowLoading } = useHome();
+  const { setShowLoading } = useHome();
   const [ searchParams ] = useSearchParams(); 
 
   const count = parseInt(searchParams.get('count') || '');

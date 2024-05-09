@@ -4,7 +4,7 @@ import TableSelectForm from "../../components/Home/TableSelectForm";
 
 import style from './Home.module.css';
 import {Routes, Route} from "react-router-dom";
-import {Context, createContext, useEffect} from "react";
+import { createContext, useEffect } from "react";
 import {useContext, useState} from "react";
 
 const HomeContext = createContext<{

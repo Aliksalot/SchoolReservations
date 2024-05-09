@@ -1,4 +1,4 @@
-import { Table, TableOption, Reservation } from '../types/models';
+import { Table } from '../types/models';
 import { POSSIBLE_RESERVATION_TIMES } from '../constants';
 import { MongoClient, WithId } from 'mongodb';
 

@@ -16,7 +16,7 @@ const handler: Handler = async(event) => {
   for(let i = 0; i < 30; i++){
     tables.push({
       tableNumber: i + 1,
-      taken: false,
+      takenAt: [],
       size: randomSize()
     })
   }

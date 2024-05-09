@@ -1,44 +1,53 @@
 import { Handler } from '@netlify/functions';
-import { MongoClient } from 'mongodb';
-import { Table, TableOption } from '../../src/types/models';
-
-const client = new MongoClient(process.env.CONNECTION_URL || '');
+import { Table } from '../../src/types/models';
+import {getAvailableTables} from '../../src/utils/reserve';
 
 const handler: Handler = async(event) => {
-  const db = (await client.connect()).db(process.env.DATABASE_NAME || '');
-  const collection = db.collection<Table>(process.env.TABLES_COLLECTION || '');
-  let availableTables = (await collection.find({ taken: false }).toArray()).sort((a, b) => a.size - b.size);
-  let target = 7;
+  
+  try{
+    var { count, time } = JSON.parse(event.body || '');
+    count = parseInt(count);
+    console.log(count, time);
+  }catch{
+    return{
+      statusCode: 400
+    }
+  }
+  if(!count || isNaN(count)){
+    return{
+      statusCode: 400
+    }
+  }
+  let availableTables = (await getAvailableTables(time)).sort((a, b) => a.size - b.size);
+  if(!availableTables || availableTables.length <=0){
+    return {
+      statusCode: 400
+    }
+  }
   let tables : Table[] = [];
-  availableTables.map((table) => console.log(table.size));
-  while(target > 0) {
+  while(count > 0) {
     let addedTable = false;
-    for(let i = availableTables.length - 1; i >= 0; i --){
+    for(let i = 0; i < availableTables.length; i ++){
       const { size } = availableTables[i];
-      if(size <= target){
+      if(size >= count){
         tables.push(availableTables[i]);
+        count -= size;
         availableTables = availableTables.filter((table) => table._id !== availableTables[i]._id);
         addedTable = true;
-        target -= size;
         break;
       }
     }
-    if(!addedTable && target > 0){
-      for(let i = 0; i < availableTables.length; i ++){
-        const { size } = availableTables[i];
-        if(size >= target){
-          tables.push(availableTables[i]);
-          availableTables = availableTables.filter((table) => table._id !== availableTables[i]._id);
-          addedTable = true;
-          target -= size;
-          break;
-        }
-      }
+    if(!addedTable){
+      const table = availableTables.pop() as Table;
+      tables.push(table);
+      count -= table.size;
     }
   }
+
   console.log(tables);
   return {
     statusCode: 200,
+    body: JSON.stringify(tables)
   }
 }
 export { handler }

@@ -1,6 +1,7 @@
 .content{
   width: var(--content-width);
   margin: auto 0;
+  position: relative;
   max-width: 400px;
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(255, 255, 255, .9);

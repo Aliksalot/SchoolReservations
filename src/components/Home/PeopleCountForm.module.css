@@ -17,6 +17,15 @@
   outline: none;
   background-color: transparent;
 }
+.timeSelect{
+  background-color: var(--color2);
+  color: var(--color1);
+  padding: .2rem 2rem;
+  border: none;
+  border-radius: .5rem;
+  width: min-content;
+  margin: .5rem auto;
+}
 .submitPeopleCountButton{
   display: none;
   width: min-content;
@@ -24,6 +33,25 @@
   font-size: 1.1rem;
   padding: .1rem 1rem;
   margin: .3rem auto;
+  margin-top: 2rem;
+
+}
+.submitPeopleCountButton{
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-size: 1.5rem;
+  padding: .2rem 2rem;
+  cursor: pointer;
+  
+  transition: scale .2s ease;
+}
+.submitPeopleCountButton:hover{
+  scale: 1.05;
+}
+.submitPeopleCountButton:active{
+  scale: 1;
 }
 .show{
   display: block;

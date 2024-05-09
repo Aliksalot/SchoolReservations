@@ -1,4 +1,5 @@
 .form{
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,10 +15,74 @@
   width: 80%;
   text-align: center;
 }
-.select{
+.tablesList{
+  width: 96%;
+  list-style-type: none;
+  padding: 0 2%;
+  
+  display: flex;
+  flex-direction: column;
+
 }
-.select option{
+.tableItem{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: .3rem 0;
+  padding: .5rem 5%;
+  border-radius: 1rem;
+  background-color: var(--color2);
+  color: var(--color1);
+  
+  transition: scale .2s ease;
+}
+.tableItem:hover{
+  scale: 1.05;
+}
+.buttonsContainer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 .submitButton{
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-size: 1.1rem;
+  padding: .2rem 2rem;
+    cursor: pointer;
+  
+  transition: scale .2s ease;
 }
-
+.submitButton:hover{
+  scale: 1.05;
+}
+.submitButton:active{
+  scale: 1;
+}
+.noTablesText{
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+.nameInputForm{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.nameInputLabel{
+  font-size: 1.2rem;
+}
+.nameInputField{
+  margin: .6rem auto 2rem auto;
+  padding: 0.2rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  width: min-content;
+  background-color: var(--color2);
+  color: var(--color1);
+}
+.nameInputField::placeholder{
+  color: white;
+}

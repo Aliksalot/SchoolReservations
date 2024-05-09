@@ -1,15 +1,15 @@
 export type TableOption = {
-  tables: Table[],
+  tableNumbers: number[],
   size: number,
 }
 export type Table = {
   _id?: string,
   tableNumber: number,
-  taken: boolean,
-  size: number
+  takenAt: string[],
+  size: number,
 }
 export type Reservation = {
   tableOption: TableOption,
   name: string,
-  time: Date
+  time: string
 }

@@ -5,6 +5,7 @@ import { HomeProvider } from './views/Home/Home.tsx'
 
 import Nav from './components/shared/Nav.tsx'
 import Home from './views/Home/Home.tsx'
+import Reservations, {ReservationsProvider} from './views/Reservations/Reservations.tsx'
 function App() {
   return (
     <>
@@ -16,6 +17,11 @@ function App() {
               <Home />
             </HomeProvider>
           } />
+          <Route path = '/reservations' element = { 
+            <ReservationsProvider>
+              <Reservations />
+            </ReservationsProvider>
+           } />
           <Route path = '*' element= {<Navigate to='/reserve' replace />} />
         </Routes>
       </main>

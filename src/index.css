@@ -11,7 +11,7 @@
 }
 html{
   width: 100vw;
-  height: 100vh;
+  height: max(100vh, max-content);
 }
 #root{
   padding: 0;
@@ -28,6 +28,7 @@ body{
   height: 100vh;
 }
 main{
+  position: relative;
   display: flex;
   width: 100vw;
   flex-direction: column;

@@ -36,4 +36,23 @@ export const getAvailableTables = async(time: string) : Promise<WithId<Table>[]>
   })
   return tables;
 }
+export const freeTables = async(table?: number[]) => {
+  await client.connect();
+  const db = client.db(process.env.DATABASE_NAME);
+  const collection = db.collection<Table>(process.env.TABLES_COLLECTION || '');
+  if(!table){
+    await collection.updateMany({}, { $set: { takenAt: [] }})
+  }else{
+    await collection.updateMany({
+      tableNumber: {
+        $in: table
+      }
+    }, {
+      $set: {
+        takenAt: []
+      }
+    })
+  }
+
+}
 

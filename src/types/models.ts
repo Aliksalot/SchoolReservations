@@ -11,5 +11,5 @@ export type Table = {
 export type Reservation = {
   tableOption: TableOption,
   name: string,
-  time: string
+  time: string,
 }

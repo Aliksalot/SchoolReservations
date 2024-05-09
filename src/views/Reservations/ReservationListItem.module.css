@@ -1,0 +1,29 @@
+.reservation{
+  display: flex;
+  background-color: var(--color2);
+  color: var(--color1);
+  flex-grow: 1;
+  justify-content: space-evenly;
+  margin: 1rem;
+  padding: .5rem;
+  align-items: center;
+
+  transition: scale .3s ease;
+}
+.reservation:hover, .reservation:active{
+  scale: 1.1;
+}
+.tablesList{
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+.deleteButton{
+  background-color: var(--color1);
+  color: var(--color2);
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+

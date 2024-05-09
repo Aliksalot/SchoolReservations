@@ -1,0 +1,29 @@
+.header{
+}
+.h1{
+}
+.deleteAll{
+  font-size: 1.2rem;
+  color: var(--color1);
+  background-color: var(--color2);
+  border: none;
+  border-radius: 1rem;
+  padding: .2rem 2rem;
+  cursor: pointer;
+  transition: scale .3s ease;
+}
+.deleteAll:hover{
+  scale: 1.1;
+}
+.deleteAll:active{
+  scale: 1;
+}
+.reservationsList{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}

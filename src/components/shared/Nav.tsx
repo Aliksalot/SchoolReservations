@@ -9,6 +9,7 @@ export default function  Nav() {
     if(!alignerRef.current || !headerRef.current) return;
 
     const height = headerRef.current.clientHeight;
+    alignerRef.current.style.minHeight = `${height}px`;
     alignerRef.current.style.height = `${height}px`;
   }, [])
   return (

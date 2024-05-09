@@ -6,10 +6,12 @@
   width: 100vw;
   display: flex;
   justify-content: center;
+  z-index: 999;
   padding: 1rem;
 }
 .contentAligner{
   width: 100vw;
+  position: relative;
 }
 .nav{
   width: var(--content-width);

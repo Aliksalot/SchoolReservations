@@ -78,6 +78,7 @@ export default function  Reservations() {
             at={reservation.time}
             by={reservation.name}
             tables={reservation.tableOption.tableNumbers}
+            key={index}
           />
         ))}
       </ul>

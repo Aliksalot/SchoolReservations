@@ -24,7 +24,7 @@ export default function PeopleCountForm() {
 
   const handlePeopleCountSubmit = (event: FormEvent) => {
     event.preventDefault();
-    if(peopleCount <= 0){
+    if(!peopleCount || peopleCount <= 0 || !selectedTime || selectedTime.length < 4){
       return;
     }
     window.location.href=`/reserve/finish?count=${peopleCount}&time=${selectedTime}`;

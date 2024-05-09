@@ -110,7 +110,7 @@ export default function  TableSelectForm() {
           </ul>
         </>
         :
-        loading && <span
+        !loading && <span
           className={style.noTablesText}
         >
           We can't fit yall at this time. Please go back and choose a different time. 
